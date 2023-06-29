@@ -47,7 +47,7 @@ const Carousel = (props: any) => {
     <Slider {...settings}>
       {data &&
         data.map((item: any, index: any) => (
-          <div key={index} className="p-4 border">
+          <div key={index} className="">
             <div>
               {/* <img
                 src={item.c_photo.url}
@@ -56,8 +56,8 @@ const Carousel = (props: any) => {
               /> */}
               <Image image={item.c_photo} className="max-w-full	w-full"></Image>
             </div>
-            <div className="textClass flex justify-between leading-6 font-normal">
-              <div className="text-left ml-1">
+            <div className="textClass flex justify-center leading-6 font-normal">
+              <div className="text-center ml-1">
                 <div className="mt-4 text-base font-bold">{item.name}</div>
                 <div className="mt-4 text-xs">
                   {item.c_calories}

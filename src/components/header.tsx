@@ -42,7 +42,7 @@ const Header = () => {
     const { query } = searchEventData;
     if (query)
       window.open(
-        "https://answers_shakeshackdemo_com.sbx.yextpages.net/?query=" + query,
+        "https://hiply-special-turtle.pgsdemo.com/" + query,
         "_blank"
       );
   };
@@ -129,7 +129,7 @@ const Header = () => {
           <nav className="">
             <img
               loading="lazy"
-              src="https://i.imgur.com/pDK1zJg.png"
+              src="https://i.imgur.com/AQaTORA.png"
               className="hidden md:block"
             ></img>
             <img

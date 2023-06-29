@@ -71,10 +71,10 @@ export const config: TemplateConfig = {
       "c_relatedMenuItems.c_calories",
       "c_relatedFAQs.question",
       "c_relatedFAQs.answer",
-      // "c_nearByLocations.name",
-      // "c_nearByLocations.address",
+      "c_relatedLocations.name",
+      "c_relatedLocations.address",
       // "c_nearByLocations.hours",
-      // "c_nearByLocations.mainPhone",
+      //"c_relatedLocations.mainPhone",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -173,8 +173,8 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     geocodedCoordinate,
     c_relatedMenuItems,
-    c_relatedFAQs, c_disc
-    // c_nearByLocations,
+    c_relatedFAQs, c_disc,
+    c_relatedLocations,
     // c_bannerImg,
   } = document;
   const [isActive, setIsActive] = useState(false);
@@ -393,13 +393,14 @@ const Location: Template<TemplateRenderProps> = ({
 
           <div className="w-4/6 mx-auto text-center mt-10  bg-white">
             <div className=" font-bold uppercase text-black text-5xl">
-              About {name}
+              About {name} {address.city}
             </div>
             <div className="flex gap-4 mt-8">
               <div className="mt-4 text-left text-gray-500 leading-8 w-1/2">
                 <RTF>{c_disc}</RTF>
               </div>
               <div className=" w-1/2">
+                <div className="mt-10"></div>
                 <img
                   src="https://lh3.googleusercontent.com/p/AF1QipO2rmH8pFgmiDcB3RvCa-Zo-XL1WYN6Mheeiys-=s1360-w1360-h1020"
                   alt=""
@@ -413,11 +414,11 @@ const Location: Template<TemplateRenderProps> = ({
         <h1 className="text-4xl mb-4 font-bold text-black uppercase">
           Near by locations
         </h1>
-        {/* {c_nearByLocations && (
-          <LocCarousel data={c_nearByLocations} document={document} />
-        )} */}
+        {c_relatedLocations && (
+          <LocCarousel data={c_relatedLocations} document={document} />
+        )}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -16,7 +16,6 @@ const Contact = (props: any) => {
             {address.city}, {address.region} {address.postalCode}
           </div>
           <div className="flex justify-center leading-loose items-center text-base md:text-xl">
-            <FiPhone />
             {phone && (
               <span className="ml-2">
                 {phone

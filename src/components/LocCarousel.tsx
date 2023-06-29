@@ -54,18 +54,18 @@ const LocCarousel = (props: any) => {
               <div>
                 <Contact
                   address={item.address}
-                  phone={item.mainPhone}
+                  //phone={item.mainPhone}
                   showCTA={false}
                 ></Contact>
               </div>
-              <div className="mt-4 text-green-600 text-left">
+              <div className="mt-4 text-black text-left">
                 {item.mainPhone &&
                   item.mainPhone
                     .replace("+1", "")
                     .replace(/\D+/g, "")
                     .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
               </div>
-              <div className="mt-4 uppercase text-green-600 text-left">
+              <div className="mt-4 uppercase text-black text-left">
                 View page
               </div>
             </div>
