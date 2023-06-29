@@ -293,7 +293,7 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
         </div>
       </div>
-      <div className="mx-auto p-4 mb-4 mx-auto text-center">
+      <div className="p-4 mb-4 mx-auto text-center">
         <h1 className="text-4xl mb-4 font-bold text-black uppercase">
           Featured Menu
         </h1>
