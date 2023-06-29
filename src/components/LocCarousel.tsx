@@ -6,6 +6,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { Markdown } from "react-showdown";
 import Contact from "./contact";
 import HoursText from "./HoursText";
+import Cta from "./cta";
 const LocCarousel = (props: any) => {
   const { data } = props;
   const settings = {
@@ -58,7 +59,7 @@ const LocCarousel = (props: any) => {
                   showCTA={false}
                 ></Contact>
               </div>
-              <div className="mt-4 text-black text-left">
+              <div className="mb-8 text-black text-left">
                 {item.mainPhone &&
                   item.mainPhone
                     .replace("+1", "")
@@ -66,7 +67,12 @@ const LocCarousel = (props: any) => {
                     .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
               </div>
               <div className="mt-4 uppercase text-black text-left">
-                View page
+                {/* View page */}
+                <Cta
+                  buttonText="View Page"
+                  url={`/${item.slug}`}
+                  style="primary-cta"
+                />
               </div>
             </div>
           </div>

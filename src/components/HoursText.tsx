@@ -81,7 +81,7 @@ const HoursText = ({ document }: any) => {
   };
   const res = getDayName(hours, timezone);
   return (
-    <div className="hero mt-4 w-full">
+    <div className="hero w-full">
       <div className="hero-row">
         <div
           className={

@@ -44,7 +44,7 @@ import { useState } from "react";
 import LocCarousel from "../components/LocCarousel";
 import Schema from "../components/Schema";
 import RTF from "../components/RTF";
-
+import { BiRightArrowAlt } from "react-icons/bi";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -74,7 +74,8 @@ export const config: TemplateConfig = {
       "c_relatedLocations.name",
       "c_relatedLocations.address",
       // "c_nearByLocations.hours",
-      //"c_relatedLocations.mainPhone",
+      "c_relatedLocations.mainPhone",
+      "c_relatedLocations.slug",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -195,8 +196,8 @@ const Location: Template<TemplateRenderProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 mx-auto">
             <div>
-              <div className="text-center   mx-auto">  <h1 className="text-4xl mb-4 font-bold text-black uppercase text-center">
-                {name}
+              <div className="mx-auto">  <h1 className="text-4xl mb-4 font-bold text-black uppercase">
+                {name} Info
               </h1>
                 <Contact
                   address={address}
@@ -211,36 +212,47 @@ const Location: Template<TemplateRenderProps> = ({
 
                 <div className="flex flex-col mt-4 text-base md:text-xl justify-center md:justify-left gap-y-4">
                   <div className="flex gap-4 items-center">
-                    <div><BsArrowRightCircle /></div>
+                    {/* <div><BsArrowRightCircle /></div> */}
                     <div className="text-2xl font-bold">Services</div>
                   </div>
                   {/* <span className="font-bold ">Services:</span> */}
 
-                  <div className=" ml-2 grid grid-cols-2 services gap-4">
-                    {services.map((item) => (
-                      <div>{item}</div>
+                  <div className="ml-2 grid grid-cols-2 services gap-y-1">
+                    {services.map((item, index) => (
+                      <div key={index} className="items-center flex gap-1">
+                        <BiRightArrowAlt />
+                        <div>{item}</div>
+                      </div>
                     ))}
                   </div>
                 </div>
 
                 {hours && (
-                  <div className="flex w-full leading-loose items-baseline text-base md:text-xl">
-                    <FiClock />
-                    <span className="ml-2">
-                      <HoursText document={document} />
-                    </span>
-                    {!isActive && (
-                      <BsChevronDown
-                        className="ml-4"
-                        onClick={(e) => setIsActive(!isActive)}
-                      />
-                    )}
-                    {isActive && (
-                      <BsChevronUp
-                        className="ml-4"
-                        onClick={(e) => setIsActive(!isActive)}
-                      />
-                    )}
+                  <div className="flex flex-col w-full leading-loose items-baseline text-base md:text-xl">
+                    <div className="font-bold text-2xl my-4">
+                      Store Hours
+                    </div>
+                    <div className="flex items-center">
+                      <FiClock />
+                      <span className="ml-2">
+                        <HoursText document={document} />
+                      </span>
+                      {!isActive && (
+                        <BsChevronDown
+                          className="ml-4"
+                          onClick={(e) => setIsActive(!isActive)}
+                        />
+                      )}
+                      {isActive && (
+                        <BsChevronUp
+                          className="ml-4"
+                          onClick={(e) => setIsActive(!isActive)}
+                        />
+                      )}
+                    </div>
+
+
+
                   </div>
                 )}
                 {isActive && hours && <Hours title={""} hours={hours} />}
