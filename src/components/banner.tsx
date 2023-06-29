@@ -37,13 +37,15 @@ const Banner = (props: Banner) => {
   return (
     <>
       <div className="relative h-auto">
-        <div
-          className="bg-cover bg-center "
-          style={{
-            backgroundImage: `url("${img[0].image.url}")`,
-            height: "250px",
-          }}
-        ></div>
+        {img && (
+          <div
+            className="bg-cover bg-center "
+            style={{
+              backgroundImage: `url("${img[0].image.url}")`,
+              height: "250px",
+            }}
+          ></div>
+        )}
         <div className="h-full w-full absolute top-0 left-0 z-2">
           <div className=" w-full absolute bg-black bg-opacity-75 flex items-center justify-center flex-col h-full text-white">
             <div className="text-center space-y-4">

@@ -409,10 +409,12 @@ const Location: Template<TemplateRenderProps> = ({
               <div className="mt-4 text-left text-gray-500 leading-8 w-1/2">
                 <RTF>{c_disc}</RTF>
               </div>
-              <div className=" w-1/2">
-                <div className="mt-10"></div>
-                <img src={photoGallery[0].image.url} alt="" />
-              </div>
+              {photoGallery && (
+                <div className=" w-1/2">
+                  <div className="mt-10"></div>
+                  <img src={photoGallery[0].image.url} alt="" />
+                </div>
+              )}
             </div>
           </div>
         </div>
