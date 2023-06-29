@@ -142,7 +142,7 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className="w-full">
+        <div className="w-full mb-8">
           <SearchBar
             onSearch={onSearch}
             customCssClasses={{

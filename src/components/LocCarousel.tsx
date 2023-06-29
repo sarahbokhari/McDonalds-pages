@@ -48,7 +48,7 @@ const LocCarousel = (props: any) => {
         data.map((item: any, index: any) => (
           <div key={index} className="p-4 w-full">
             <div className="textClass leading-6 font-normal">
-              <h1 className="text-xl font-bold float-left">{item.name}</h1>
+              <h1 className="text-2xl font-bold float-left">{item.name}</h1>
               <div className="-ml-1 locCar mb-1">
                 <HoursText document={props.document} />
               </div>
