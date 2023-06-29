@@ -11,19 +11,19 @@ const HoursText = ({ document }: any) => {
       };
     var startTime =
       (hours[currentDay.toLowerCase()].openIntervals[0].start.split(":")[0] ===
-      "00"
+        "00"
         ? 24
         : hours[currentDay.toLowerCase()].openIntervals[0].start.split(
-            ":"
-          )[0]) *
-        60 +
+          ":"
+        )[0]) *
+      60 +
       hours[currentDay.toLowerCase()].openIntervals[0].start.split(":")[1];
     var endTime =
       (hours[currentDay.toLowerCase()].openIntervals[0].end.split(":")[0] ===
-      "00"
+        "00"
         ? 24
         : hours[currentDay.toLowerCase()].openIntervals[0].end.split(":")[0]) *
-        60 +
+      60 +
       hours[currentDay.toLowerCase()].openIntervals[0].end.split(":")[1];
     var currently = currentTime.split(":")[0] * 60 + currentTime.split(":")[1];
     if (
@@ -54,9 +54,8 @@ const HoursText = ({ document }: any) => {
   const closeOrOpenTime = (inpTime: any) => {
     let newTime = inpTime;
     if (inpTime.split(":")[0] === "00")
-      newTime = `${newTime.split(":")[0].replace(/(.*)/, "24")}:${
-        newTime.split(":")[1]
-      }`;
+      newTime = `${newTime.split(":")[0].replace(/(.*)/, "24")}:${newTime.split(":")[1]
+        }`;
 
     newTime =
       newTime.split(":")[0] >= 12 && newTime.split(":")[0] <= 23
@@ -92,15 +91,15 @@ const HoursText = ({ document }: any) => {
           }
         >
           <p className="font-bold">
-            {res.status === "Open Now"
+            {res.status.toLowerCase() === "open now"
               ? "Open Now - "
-              : res.status === "Closed"
-              ? "Closed  - "
-              : res.status === "Closed perm"
-              ? "Closed"
-              : ""}
+              : res.status.toLowerCase() === "closed"
+                ? "Closed  - "
+                : res.status.toLowerCase() === "closed perm"
+                  ? "Closed"
+                  : ""}
           </p>
-          {res.status !== "Closed perm" && res.text}
+          {res.status.toLowerCase() !== "closed perm" && res.text}
         </div>
       </div>
     </div>
