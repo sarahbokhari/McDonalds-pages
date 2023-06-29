@@ -33,16 +33,18 @@ const Header = () => {
   ));
   const searcher = provideHeadless({
     ...searchConfig,
-    verticalKey: "location",
+    verticalKey: "locations",
   });
   const onSearch = (searchEventData: {
     verticalKey?: string;
     query?: string;
   }) => {
+
     const { query } = searchEventData;
+
     if (query)
       window.open(
-        "https://hiply-special-turtle.pgsdemo.com/" + query,
+        "https://hiply-special-turtle.pgsdemo.com/?query=" + query,
         "_blank"
       );
   };

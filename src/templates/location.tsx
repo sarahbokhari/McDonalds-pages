@@ -218,6 +218,18 @@ const Location: Template<TemplateRenderProps> = ({
                   {/* <span className="font-bold ">Services:</span> */}
 
                   <div className="ml-2 grid grid-cols-2 services gap-y-1">
+
+                    {/* let services = [1,2,3,4] 
+                    
+                    let services=[{
+                      name:a
+                    },{
+                      name:b
+                    },{
+                      name:c
+                    }] 
+                    
+                    */}
                     {services.map((item, index) => (
                       <div key={index} className="items-center flex gap-1">
                         <BiRightArrowAlt />

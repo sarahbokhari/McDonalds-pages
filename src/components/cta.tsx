@@ -8,7 +8,6 @@ type Cta = {
 
 const Cta = (props: Cta) => {
   const { buttonText, url, style } = props;
-  console.log(url);
 
   return (
     <a
