@@ -299,39 +299,41 @@ const Location: Template<TemplateRenderProps> = ({
         </h1>
         {c_relatedMenuItems && <Carousel data={c_relatedMenuItems}></Carousel>}
       </div>
-      <div className="my-8 mb-20 md:mb-8 mx-4">
-        <div className="w-full  md:w-3/4 mx-auto">
-          <h1 className="text-4xl font-bold text-black uppercase text-center mb-4">
-            Limited Time Offers
-          </h1>
-          <div
-            className="flex flex-col md:flex-row w-full justify-evenly gap-1 md:gap-3"
-            style={{ height: "300px" }}
-          >
-            {c_relatedDeals.map((item, index) => (
-              <div
-                className="w-full md:w-1/2 flex justify-center"
-                style={{
-                  backgroundImage: `url(${item.c_photo.url})`,
-                  backgroundSize: "cover",
-                }}
-              >
-                <div className="w-3/4 h-fit border my-auto p-4 bg-black text-white flex flex-col">
-                  <h1 className="text-base md:text-xl font-bold">
-                    {item.name}
-                  </h1>
-                  <p className="pb-4  md:my-4">{item.description}</p>
-                  <Cta
-                    buttonText={item.c_primaryCTA.label}
-                    style="primary-cta "
-                    url={item.c_primaryCTA.link}
-                  ></Cta>
+      {c_relatedDeals && (
+        <div className="my-8 mb-20 md:mb-8 mx-4">
+          <div className="w-full  md:w-3/4 mx-auto">
+            <h1 className="text-4xl font-bold text-black uppercase text-center mb-4">
+              Limited Time Offers
+            </h1>
+            <div
+              className="flex flex-col md:flex-row w-full justify-evenly gap-1 md:gap-3"
+              style={{ height: "300px" }}
+            >
+              {c_relatedDeals.map((item, index) => (
+                <div
+                  className="w-full md:w-1/2 flex justify-center"
+                  style={{
+                    backgroundImage: `url(${item.c_photo.url})`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                  <div className="w-3/4 h-fit border my-auto p-4 bg-black text-white flex flex-col">
+                    <h1 className="text-base md:text-xl font-bold">
+                      {item.name}
+                    </h1>
+                    <p className="pb-4  md:my-4">{item.description}</p>
+                    <Cta
+                      buttonText={item.c_primaryCTA.label}
+                      style="primary-cta "
+                      url={item.c_primaryCTA.link}
+                    ></Cta>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div className="w-full md:w-full bg-gray-200 mt-4">
         <div className="p-4 w-full md:w-2/4 mx-auto text-center mb-10 ">
           <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
